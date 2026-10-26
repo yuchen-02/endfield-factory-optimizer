@@ -1,0 +1,19 @@
+{
+  "raw_items": ["礦石", "水"],
+  "recipes": [
+    {
+      "id": "smelt_ingot",
+      "machine": "熔爐",
+      "time_sec": 2,
+      "inputs":  { "礦石": 1 },
+      "outputs": { "金屬錠": 1 }
+    },
+    {
+      "id": "make_part",
+      "machine": "組裝機",
+      "time_sec": 4,
+      "inputs":  { "金屬錠": 2, "水": 1 },
+      "outputs": { "零件": 1 }
+    }
+  ]
+}
