@@ -1,19 +1,44 @@
 {
-  "raw_items": ["礦石", "水"],
+  "raw_items": [],
+  "machines": {
+    "便攜式源石礦機": {
+      "automated": false,
+      "power": 0,
+      "build_cost": { "晶體外殼": 5 }
+    },
+    "電驅礦機": {
+      "automated": true,
+      "power": 5,
+      "build_cost": { "便攜式源石礦機": 1, "晶體外殼": 5 }
+    },
+    "精煉爐": {
+      "automated": true,
+      "power": 5,
+      "build_cost": { "源礦": 5 }
+    }
+  },
   "recipes": [
     {
-      "id": "smelt_ingot",
-      "machine": "熔爐",
-      "time_sec": 2,
-      "inputs":  { "礦石": 1 },
-      "outputs": { "金屬錠": 1 }
+      "id": "mine_ore_portable",
+      "machine": "便攜式源石礦機",
+      "time_sec": 3,
+      "inputs": {},
+      "outputs": { "源礦": 1 }
     },
     {
-      "id": "make_part",
-      "machine": "組裝機",
-      "time_sec": 4,
-      "inputs":  { "金屬錠": 2, "水": 1 },
-      "outputs": { "零件": 1 }
+      "id": "mine_ore_electric",
+      "machine": "電驅礦機",
+      "time_sec": 3,
+      "inputs": {},
+      "outputs": { "源礦": 1 }
+    },
+    {
+      "id": "refine_crystal_shell",
+      "machine": "精煉爐",
+      "time_sec": 2,
+      "inputs": { "源礦": 1 },
+      "outputs": { "晶體外殼": 1 }
     }
   ]
 }
+
